@@ -1,0 +1,84 @@
+/* === Базовые стили (Mobile-first подход) === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+p {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Галерея: одноколоночная сетка с зазором 10px */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* === Медиа-запрос 1: Планшетный вид (min-width: 772px) === */
+@media (min-width: 772px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* Применяем круглую форму к фигурам */
+  figure {
+    border-radius: 50%;
+  }
+  
+  /* Последняя фигура занимает обе колонки */
+  .gallery figure:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* === Медиа-запрос 2: Большой экран (min-width: 992px) === */
+@media (min-width: 992px) {
+  /* Каждая третья фигура занимает обе колонки */
+  .gallery figure:nth-child(3n) {
+    grid-column: 1 / -1;
+  }
+  
+  /* Убираем скругление у всех фигур */
+  .gallery figure {
+    border-radius: 0;
+  }
+}
+
+/* === Медиа-запрос 3: Предпочтение уменьшённой анимации === */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* === Медиа-запрос 4: Тёмная цветовая схема === */
+@media (prefers-color-scheme: dark) {
+  header, footer {
+    background-color: #333;
+    color: #ff0;
+  }
+  
+  p {
+    color: #ff0;
+  }
+  
+  .gallery figure {
+    background-color: #222;
+    color: #ff0;
+    border: 1px solid #000;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фотки Мои</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Мои Фотки</h1>
+  </header>
+  <main>
+    <!-- Изменённый текст в параграфе -->
+    <p>Добро пожаловать в мою персональную коллекцию фотографий. Здесь собраны уникальные моменты, отражающие красоту природы и городской жизни.</p>
+    <section class="gallery">
+      <figure>
+        <img src="images/photo1.jpg" alt="Восход солнца над горами">
+      </figure>
+      <figure>
+        <img src="images/photo2.jpg" alt="Спокойное озеро с отражением деревьев">
+      </figure>
+      <figure>
+        <img src="images/photo3.jpg" alt="Силуэт города на закате с огнями">
+      </figure>
+      <figure>
+        <img src="images/photo4.jpg" alt="Цветок крупным планом с яркими лепестками">
+      </figure>
+      <figure>
+        <img src="images/photo5.jpg" alt="Извилистая дорога через лес">
+      </figure>
+      <figure>
+        <img src="images/photo6.jpg" alt="Заснеженный пейзаж с ясным небом">
+      </figure>
+      <figure>
+        <img src="images/photo7.jpg" alt="Пустынные дюны под звёздным небом">
+      </figure>
+      <figure>
+        <img src="images/photo8.jpg" alt="Мощные волны океана, бьющиеся о берег">
+      </figure>
+      <figure>
+        <img src="images/photo9.jpg" alt="Яркое поле с дикими цветами">
+      </figure>
+    </section>
+  </main>
+  <footer>
+    <button id="back-to-top">Вернуться к началу</button>
+  </footer>
+  
+  <script>
+    // Плавная прокрутка к началу страницы.
+    document.getElementById('back-to-top').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
